@@ -6,17 +6,19 @@ public class TerrainGenerator : MonoBehaviour
     public int size = 256;
     public int maxHeight = 64;
     
+    [Header("Sizes")]
     // sizes
+    public float islandSize = 2;
     public float mountainSize = 50;
     public float hillSize = 15;
     public float bumpSize = 6;
     
+    [Header("Heights")]
     // height
     public float mountainHeight = 1;
     public float hillHeight = 0.3f;
     public float bumpHeight = 0.02f;
-
-    public float islandSize = 2;
+    
     
     
     public bool autoGenerate = true;
