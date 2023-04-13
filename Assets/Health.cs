@@ -28,8 +28,6 @@ public class Health : MonoBehaviour
         {
             Die();
         }
-        
-        transform.localScale -= Vector3.one * 0.1f;
     }
 
     public void Die()
