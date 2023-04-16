@@ -18,7 +18,13 @@ public class TerrainGenerator : MonoBehaviour
     public float mountainHeight = 1;
     public float hillHeight = 0.3f;
     public float bumpHeight = 0.02f;
-    
+    public float power = 2;
+    public AnimationCurve heightCurve;
+
+    [Header("Materials")] 
+    public float sandHeight = 0.1f;
+
+    public float grassHeight = 0.2f;
     
     
     public bool autoGenerate = true;
@@ -56,8 +62,10 @@ public class TerrainGenerator : MonoBehaviour
                 //Generate the height
                 float Noise(Vector2 pos)=> math.remap(-1,1,0,1,noise.pnoise(pos, size));
                 var pos = new float2(x, y);
-                
+
                 var height = Noise(pos / mountainSize) * mountainHeight;
+                height = heightCurve.Evaluate(height);
+                
                 height -=  Noise(pos / hillSize) * hillHeight;
                 height += Noise(pos / bumpSize) * bumpHeight;
                 
@@ -70,5 +78,50 @@ public class TerrainGenerator : MonoBehaviour
         
         //Apply the heightmap
         terrainData.SetHeights(0, 0, heightmap);
+        
+        
+        // PAINT layers on the terrain
+        var splatmap = new float[size, size, 3];
+        
+        for (int y = 0; y < size; y++)
+        {
+            for (int x = 0; x < size; x++)
+            {
+                var height = heightmap[x, y];
+
+                if (height < sandHeight)
+                {
+                    splatmap [x, y, 0] = 1; // SAND
+                }
+                else if(height < grassHeight)
+                {
+                    splatmap [x, y, 2] = 1; // GRASS
+                }
+                else
+                {
+                    splatmap[x, y, 1] = 1; // STONE
+                }
+            }
+        }
+
+        terrainData.SetAlphamaps(0, 0, splatmap);
+        
+        
+        
+        // GRASS PAINT as detail layer
+        /*
+        var detailmap = new int[size, size];
+        for (int y = 0; y < size; y++)
+        {
+            for (int x = 0; x < size; x++)
+            {
+                detailmap[x, y] = 0;
+            }
+        }
+        
+        terrainData.SetDetailLayer(0,0,0,detailmap);
+        */
+  
+
     }
 }

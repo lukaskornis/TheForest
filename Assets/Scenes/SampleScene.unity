@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6142622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 121.1, y: 10, z: 134.4}
+  m_LocalPosition: {x: 121.1, y: 4.09, z: 134.4}
   m_LocalScale: {x: 3525, y: 1, z: 3525}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -272,9 +272,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc514f84e56c5443826300f20486582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldownTime: 1
   range: 2
   damage: 1
   resourceTag: Tree
+  toolModel: {fileID: 963480597}
+  canUse: 1
 --- !u!1 &513816326
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +519,11 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   dayLength: 1000
   currentTime: 194.1
+--- !u!4 &963480597 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}
+  m_PrefabInstance: {fileID: 1464495137}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1019310829 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4490257326247362, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
@@ -812,7 +820,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1019310829}
+    m_TransformParent: {fileID: 1948139631}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}
       propertyPath: m_RootOrder
@@ -820,31 +828,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.93
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5838222
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.002392979
+      value: 1.1641534e-10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.8118762
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0017207975
+      value: -2.3283067e-10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1005,7 +1013,7 @@ Terrain:
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
-  m_DetailObjectDensity: 1
+  m_DetailObjectDensity: 0.172
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
   m_HeightmapMaximumLOD: 0
@@ -1060,7 +1068,61 @@ MonoBehaviour:
   mountainHeight: 1.5
   hillHeight: 0.3
   bumpHeight: 0.05
-  autoGenerate: 0
+  power: 4
+  heightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0000017806888
+      value: -0.0023561865
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1195775
+      value: 0.055405326
+      inSlope: 0.87755525
+      outSlope: 0.87755525
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.20229034
+      value: 0.197322
+      inSlope: 0.34994468
+      outSlope: 0.34994468
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.370834
+    - serializedVersion: 3
+      time: 0.8854411
+      value: 0.4132097
+      inSlope: 0.9921469
+      outSlope: 0.9921469
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13749643
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  sandHeight: 0.07
+  grassHeight: 0.2
+  autoGenerate: 1
 --- !u!1001 &1746360044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1423,6 +1485,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1948139630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1948139631}
+  m_Layer: 6
+  m_Name: Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1948139631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948139630}
+  m_LocalRotation: {x: -0.0023929793, y: -0.8118762, z: 0.0017207976, w: 0.5838222}
+  m_LocalPosition: {x: 0.9299935, y: -1.0200015, z: 1.1700121}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 963480597}
+  m_Father: {fileID: 1019310829}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1992640154
 GameObject:
   m_ObjectHideFlags: 0
