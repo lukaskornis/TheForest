@@ -824,7 +824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.16
+      value: -1.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -832,19 +832,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.58382475
+      value: 0.5838222
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.002392979
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.81187975
+      value: -0.8118762
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.0017207975
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -856,7 +856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 0.338
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1136,7 +1136,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1820035170}
   - component: {fileID: 1820035172}
-  - component: {fileID: 1820035171}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -1159,14 +1158,6 @@ Transform:
   m_Father: {fileID: 1019310829}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &1820035171
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1820035169}
-  m_Enabled: 1
 --- !u!20 &1820035172
 Camera:
   m_ObjectHideFlags: 0
@@ -1176,7 +1167,7 @@ Camera:
   m_GameObject: {fileID: 1820035169}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
+  m_ClearFlags: 3
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1195,7 +1186,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 64

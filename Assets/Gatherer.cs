@@ -5,6 +5,7 @@ public class Gatherer : MonoBehaviour
     public float range = 2;
     public int damage = 1;
     public string resourceTag;
+    public Transform toolModel;
     
     private void Update()
     {
