@@ -9,6 +9,7 @@ TagManager:
   - Interactable
   - Water
   - Tree
+  - Item
   layers:
   - Default
   - TransparentFX

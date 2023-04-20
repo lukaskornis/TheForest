@@ -1,5 +1,6 @@
 using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class TerrainGenerator : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class TerrainGenerator : MonoBehaviour
     public float sandHeight = 0.1f;
 
     public float grassHeight = 0.2f;
-    
+    public float stoneHeight = 0.4f;
     
     public bool autoGenerate = true;
     private Terrain terrain;
@@ -88,6 +89,7 @@ public class TerrainGenerator : MonoBehaviour
             for (int x = 0; x < size; x++)
             {
                 var height = heightmap[x, y];
+                height += Random.Range(0, 0.03f);
 
                 if (height < sandHeight)
                 {
@@ -97,7 +99,7 @@ public class TerrainGenerator : MonoBehaviour
                 {
                     splatmap [x, y, 2] = 1; // GRASS
                 }
-                else
+                else if (height < stoneHeight)
                 {
                     splatmap[x, y, 1] = 1; // STONE
                 }
