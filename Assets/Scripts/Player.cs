@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
         health = GetComponent<Health>();
         inventory = GetComponent<Inventory>();
         
-        inventory.Add(new Item{ stackSize = 10});
+        //inventory.Add(new Item{ stackSize = 10});
     }
 
     private void OnCollisionStay(Collision collision)

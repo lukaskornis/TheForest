@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemSlotUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   [SerializeField]private Image icon;
+   [SerializeField]private TMP_Text stackCountText;
+   
+   public void UpdateUI(Item item)
+   {
+      stackCountText.text = item.stackSize.ToString();
+      icon.sprite = item.data.icon;
+   }
 }
