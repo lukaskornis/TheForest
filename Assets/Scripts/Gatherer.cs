@@ -10,7 +10,6 @@ public class Gatherer : MonoBehaviour
     public float range = 2;
     public int damage = 1;
     public string resourceTag;
-    public Transform toolModel;
     public  bool canUse = true;
     
     private void Update()
@@ -19,10 +18,10 @@ public class Gatherer : MonoBehaviour
         {
             StartCoroutine(CooldownRoutine());
             
-            toolModel
+            transform
                 .DOLocalRotate(new Vector3(0, 0, -90), 0.15f)
                 .SetLoops(2, LoopType.Yoyo)
-                .OnComplete(() => toolModel.localEulerAngles = Vector3.zero);
+                .OnComplete(() => transform.localEulerAngles = Vector3.zero);
             
             
             var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));

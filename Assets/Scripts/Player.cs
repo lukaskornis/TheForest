@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 
@@ -6,13 +7,23 @@ public class Player : MonoBehaviour
 {
     private Health health;
     private Inventory inventory;
+    private Equipment equipment;
 
     private void Start()
     {
         health = GetComponent<Health>();
         inventory = GetComponent<Inventory>();
-        
+        equipment = GetComponent<Equipment>();
+
         //inventory.Add(new Item{ stackSize = 10});
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F11))
+        {
+            equipment.Equip(inventory.items[0]);
+        }
     }
 
     private void OnCollisionStay(Collision collision)
