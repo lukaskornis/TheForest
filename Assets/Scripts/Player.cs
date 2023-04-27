@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Water"))
         {
-            health.Damage(1);
+            //health.Damage(1);
         }
     }
 

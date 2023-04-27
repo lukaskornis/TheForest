@@ -15,3 +15,4 @@ MonoBehaviour:
   title: Wood
   icon: {fileID: 21300000, guid: af390fe0701eb0642833814bd0947c8d, type: 3}
   toolPrefab: {fileID: 6603430547627441070, guid: 8f8dc936ae0b9844ca16248891015c96, type: 3}
+  dropPrefab: {fileID: 0}

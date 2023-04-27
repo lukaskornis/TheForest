@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
     public GameObject dieEffect;
     public GameObject damageEffect;
 
-    public UnityEvent onDamage;
+    public UnityEvent<Vector3> onDamage;
     public UnityEvent onDie;
 
     private void Awake()
@@ -18,10 +18,10 @@ public class Health : MonoBehaviour
         if (hp <= 0) hp = maxHp;
     }
 
-    public void Damage(int value)
+    public void Damage(int value,Vector3 pos)
     {
         hp -= value;
-        onDamage.Invoke();
+        onDamage.Invoke(pos);
         if (damageEffect) Instantiate(damageEffect, transform.position, transform.rotation);
 
         if (hp <= 0)

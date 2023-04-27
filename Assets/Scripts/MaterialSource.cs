@@ -18,7 +18,7 @@ public class MaterialSource : MonoBehaviour
         if(depletedModel)Instantiate(depletedModel, transform.position, transform.rotation);
     }
 
-    void CollectResource()
+    void CollectResource(Vector3 hitPoint)
     {
         //transform.DORotate(new Vector3(1,0,0), 0.05f).SetLoops(4,LoopType.Yoyo);
         transform.DOShakeRotation(0.4f, 5, 10, 10);

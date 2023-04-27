@@ -15,3 +15,4 @@ MonoBehaviour:
   title: Shitty Axe
   icon: {fileID: 21300000, guid: 1c6940d40140089489078dc065a14b8e, type: 3}
   toolPrefab: {fileID: 1100926805563134657, guid: ed52e61385da5b04f82862d102333731, type: 3}
+  dropPrefab: {fileID: 919132149155446097, guid: 22abbdd5014f3a440aa2984a030a9d8f, type: 3}

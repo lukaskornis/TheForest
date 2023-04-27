@@ -30,7 +30,7 @@ public class Gatherer : MonoBehaviour
             {
                 if (hit.collider.CompareTag(resourceTag))
                 {
-                    hit.collider.GetComponent<Health>()?.Damage(damage);
+                    hit.collider.GetComponent<Health>()?.Damage(damage,hit.point);
                 }
             }
         }
